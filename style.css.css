@@ -1,0 +1,99 @@
+/* ============================================= */
+/* styles.css - SAVE THIS AS styles.css          */
+/* ============================================= */
+
+:root {
+    --primary: #003087;
+    --accent: #00b8a9;
+    --dark: #112233;
+}
+
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--primary) !important;
+    box-shadow: 0 4px 12px rgba(0, 48, 135, 0.3);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: white !important;
+    position: relative;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 50%;
+    background-color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0, 48, 135, 0.75), rgba(0, 48, 135, 0.75)), 
+                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d') center/cover no-repeat fixed;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* BUTTONS */
+.btn-accent {
+    background-color: var(--accent);
+    color: white;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 15px -3px rgb(0 184 169);
+}
+
+.btn-accent:hover {
+    background-color: #00a399;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgb(0 184 169);
+}
+
+/* CARDS */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 25px 25px 30px -10px rgba(0, 184, 169, 0.25) !important;
+}
+
+/* General utilities */
+.text-accent { color: var(--accent) !important; }
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+        background-attachment: scroll;
+    }
+}
